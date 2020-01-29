@@ -3,12 +3,14 @@
 @import "homepage";
 @import "navbarFooter";
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $font-title;
+    font-size: $font-size-title;
 }
 
 p, li, a {
     font-family: $font-body;
+    font-size: $font-size-text;
 }
 
 body {
