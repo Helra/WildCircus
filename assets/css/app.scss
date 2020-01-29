@@ -1,5 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
+@import "var";
+@import "homepage";
+@import "navbarFooter";
+
+h1, h2 {
+    font-family: $font-title;
+}
+
+p, li, a {
+    font-family: $font-body;
+}
 
 body {
-    background-color: lightgray;
+    background-color: $third-color;
 }

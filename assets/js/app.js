@@ -6,9 +6,15 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import '../css/app.scss';
+require('../css/app.scss');
+
+// this "modifies" the jquery module: adding behavior to it
+// the bootstrap module doesn't export/return anything
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('bootstrap');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
+const $ = require('jquery');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
