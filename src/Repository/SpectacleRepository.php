@@ -19,6 +19,15 @@ class SpectacleRepository extends ServiceEntityRepository
         parent::__construct($registry, Spectacle::class);
     }
 
+    public function findSpectacleHome(): array
+    {
+        $query = $this->createQueryBuilder('s')
+            ->setMaxResults(3)
+            ->orderBy('s.name', 'DESC');
+        return $query->getQuery()->getResult();
+
+    }
+
     // /**
     //  * @return Spectacle[] Returns an array of Spectacle objects
     //  */

@@ -1,8 +1,18 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-
-        </div>
+<div class="container-fluid spectacle">
+    <h2 class="m-2 pb-5 text-center">Un Aperçu de nos spectacles</h2>
+    <div class="row align-items-center">
+        {% for spectacle in spectacles %}
+            <div class="col-lg-4 col-md-4 d-flex justify-content-center">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('build/Circus_spectacle.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-title text-center">{{ spectacle.name }}</p>
+                        <p class="card-text text-center">{{ spectacle.presentation }}</p>
+                        <p class="card-text text-center">{{ spectacle.price }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
         <div class="col-lg-6">
 
         </div>
