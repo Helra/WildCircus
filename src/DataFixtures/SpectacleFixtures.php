@@ -18,6 +18,7 @@ class SpectacleFixtures extends Fixture
             $spectacle->setPresentation($faker->paragraph(2));
             $spectacle->setImage($faker->imageUrl());
             $spectacle->setPrice($faker->randomFloat());
+            $this->addReference('spectacle_' . $i, $spectacle);
             $manager->persist($spectacle);
         }
         $manager->flush();
