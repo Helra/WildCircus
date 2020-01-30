@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Repository\EventRepository;
 use App\Repository\SpectacleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,11 +16,13 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function seeHome(Request $request, SpectacleRepository $spectacleRepository) :Response
+    public function seeHome(Request $request, SpectacleRepository $spectacleRepository, EventRepository $eventRepository) :Response
     {
         $spectacles = $spectacleRepository->findSpectacleHome();
+        $events =  $eventRepository->findEventHome();
         return $this->render('Home/index.html.twig', [
-            'spectacles' => $spectacles
+            'spectacles' => $spectacles,
+            'events' => $events,
         ]);
     }
 

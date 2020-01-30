@@ -1,11 +1,16 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}New Spectacle{% endblock %}
 
 {% block body %}
-    <h1>Create new Spectacle</h1>
-
-    {{ include('spectacle/_form.html.twig') }}
-
-    <a href="{{ path('spectacle_index') }}">back to list</a>
+    <div class="mt-5 container-xl container-lg container-fluid">
+        <h1 class="text-center mt-3 mb-4">Créer un nouveau spectacle</h1>
+        <div class="formular-create p-4">
+            {{ include('spectacle/_form.html.twig') }}
+        </div>
+        <div class="flex d-flex justify-content-around">
+            <a class="btn btn-blue m-5" href="{{ path('spectacle_index') }}">
+                <i class="far fa-arrow-alt-circle-left"></i> Liste de vos spectacles</a>
+        </div>
+    </div>
 {% endblock %}

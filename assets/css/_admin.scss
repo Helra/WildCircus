@@ -1,0 +1,13 @@
+.formular-create {
+    border:1px solid $secondary-color;
+}
+
+.btn-blue {
+    color: $third-color;
+    background-color: $first-color;
+    font-size: 12pt;
+}
+
+.btn-blue:hover {
+    background-color: $secondary-color;
+}

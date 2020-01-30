@@ -1,32 +1,30 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Spectacle index{% endblock %}
 
 {% block body %}
-    <h1>Spectacle index</h1>
-
-    <table class="table">
+<div class="d-flex justify-content-center flex-column m-3">
+    <div class="d-flex justify-content-around flex-row m-5">
+        <h1 class="m-2">Ensemble des Spectacles</h1>
+        <a class="btn btn-blue m-2" href="{{ path('spectacle_new') }}"><i class="fas fa-edit"></i> Créer un nouveau spectacle</a>
+    </div>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Presentation</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>actions</th>
+                <th scope="col" class="text-center">Nom</th>
+                <th scope="col" class="text-center">Présentation</th>
+                <th scope="col" class="text-center">Prix</th>
+                <th scope="col" class="text-center">Administration</th>
             </tr>
         </thead>
         <tbody>
         {% for spectacle in spectacles %}
             <tr>
-                <td>{{ spectacle.id }}</td>
-                <td>{{ spectacle.name }}</td>
-                <td>{{ spectacle.presentation }}</td>
-                <td>{{ spectacle.image }}</td>
-                <td>{{ spectacle.price }}</td>
-                <td>
-                    <a href="{{ path('spectacle_show', {'id': spectacle.id}) }}">show</a>
-                    <a href="{{ path('spectacle_edit', {'id': spectacle.id}) }}">edit</a>
+                <td class="text-center">{{ spectacle.name }}</td>
+                <td class="text-center">{{ spectacle.presentation }}</td>
+                <td class="text-center">{{ spectacle.price }}€</td>
+                <td class="d-flex justify-content-center">
+                    <a class="btn btn-blue" href="{{ path('spectacle_edit', {'id': spectacle.id}) }}"><i class="fas fa-cut"></i> Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +34,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('spectacle_new') }}">Create new</a>
+</div>
 {% endblock %}

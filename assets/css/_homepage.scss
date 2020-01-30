@@ -3,19 +3,19 @@ body {
 }
 
 div.wild {
-    position:absolute;
-    bottom : 52%;
+    position: absolute;
+    bottom: 52%;
     left: 15%;
 
-    .main-title{
+    .main-title {
         font-size: 180pt;
         margin-right: 150px;
     }
 }
 
 div.circus {
-    position:absolute;
-    bottom : 30%;
+    position: absolute;
+    bottom: 30%;
     left: 35%;
 
     h1 {
@@ -24,14 +24,14 @@ div.circus {
 }
 
 .background-image {
-    position:absolute;
-    bottom : 22%;
+    position: absolute;
+    bottom: 22%;
     left: 45%;
-    height : 500px;
-    width : 500px;
+    height: 500px;
+    width: 500px;
 
     img {
-        height : auto;
+        height: auto;
         width: 850px;
     }
 }
@@ -47,15 +47,85 @@ div.circus {
 }
 
 .spectacle {
-    margin-top: 100px;
-    padding: 100px ;
+    padding: 200px;
     background-color: $first-color;
 }
 
-.card{
+.event {
+    margin-top: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px ;
+    padding-left: 100px;
+    background-color: $secondary-color;
+}
+
+.card-img-top {
+    box-shadow: 10px -16px darken($first-color, 10%);
+}
+
+.card-spectacle {
     width: 25rem;
     border: none;
-    height : 65vh;
-    background-color: $dark-color;
+    height: 65vh;
+    background-color: transparent;
+    border-bottom: 1px solid darken($first-color, 2%);
+    border-right: 1px solid darken($first-color, 2%);
+}
+
+.card-event {
+    width: 13rem;
+    border: none;
+    height: 40vh;
+    background-color: $first-color;
     color: $third-color;
+
+    svg {
+        font-size: 50px;
+    }
+}
+
+// CARDS
+
+.fixed-image-event {
+
+    img {
+        position: relative;
+        height: 50vh;
+        width: auto;
+        right: 20px;
+    }
+
+    img.image-bottom {
+        bottom: 250px;
+        height: 40vh;
+        left: 200px;
+    }
+
+    div {
+        height: 10px;
+
+        .color-square {
+            position: relative;
+            height: 35vh;
+            bottom: 10px;
+            right: 40px;
+            width: 100px;
+            background-color: $first-color;
+        }
+
+        .color-square-bottom {
+            position: relative;
+            height: 35vh;
+            bottom: 180px;
+            left: 440px;
+            width: 100px;
+            background-color: $first-color;
+        }
+    }
+}
+
+.nav-link {
+    svg {
+        font-size: $font-size-title;
+    }
 }

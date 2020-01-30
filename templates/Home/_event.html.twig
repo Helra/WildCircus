@@ -1,0 +1,35 @@
+<div class="container-fluid event">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mx-n5">
+            <div class="fixed-image-event mr-5 mb-3" id="event">
+                <div class="d-flex flex-row color-event">
+                    <div class="color-square"></div>
+                </div>
+                <img class="image-top event-img" src="{{ asset('build/Cicus-event.jpg') }}" alt="circus event">
+            </div>
+            <div class="fixed-image-event mr-5">
+                <div class="d-flex flex-row">
+                    <div class="color-square-bottom"></div>
+                </div>
+                <img class="image-bottom" src="{{ asset('build/Circus-event-2.jpg') }}" alt="circus event">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <h2 class="m-2 pb-5 text-center">Nos Prochains Evenements</h2>
+            <div class="row justify-content-center">
+                {% for event in events %}
+                <div class="col-lg-4 col-md-4 my-2 d-flex justify-content-center">
+                    <div class="card card-event">
+                        <div class="card-body text-center">
+                            <i class="fas fa-calendar-minus mb-3"></i>
+                            <p class="card-title text-center">{{ event.spectacle.name }}</p>
+                            <p class="card-text text-center">{{ event.dateTime | format_datetime('short', 'short', locale='fr') }}</p>
+                            <p class="card-text text-center">{{ event.city }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

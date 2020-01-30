@@ -1,37 +1,38 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Event index{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
-
-    <table class="table">
-        <thead>
+    <div class="d-flex justify-content-center flex-column m-3">
+        <div class="d-flex justify-content-around flex-row m-5">
+            <h1 class="m-2">Ensemble des Evenements</h1>
+            <a class="btn btn-blue m-2" href="{{ path('event_new') }}"><i class="fas fa-edit"></i> Créer un nouvel événement</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Datetime</th>
-                <th>City</th>
-                <th>actions</th>
+                <th scope="col" class="text-center">Date et heure</th>
+                <th scope="col" class="text-center">Ville</th>
+                <th scope="col" class="text-center">Spectacle</th>
+                <th scope="col" class="text-center">Administration</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.id }}</td>
-                <td>{{ event.datetime ? event.datetime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.City }}</td>
-                <td>
-                    <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
-                    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('event_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td class="text-center">{{ event.datetime ? event.datetime|date('d/m/Y à H:i:s') : '' }}</td>
+                    <td class="text-center">{{ event.City }}</td>
+                    <td class="text-center">{{ event.spectacle.name }}</td>
+                    <td class="d-flex justify-content-center">
+                        <a class="btn btn-blue" href="{{ path('event_edit', {'id': event.id}) }}"><i class="fas fa-cut"></i> Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
