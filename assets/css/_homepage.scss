@@ -264,14 +264,16 @@ div.circus {
 
     .background-image {
         position: absolute;
-        bottom: 0;
+        bottom: -250px;
         left: 0;
+        height : 800px;
         background-color: $third-color;
 
         img {
             height: 1000px;
             //width: 1000px;
             overflow-x: hidden;
+            background-color: $third-color;
         }
 
     }
