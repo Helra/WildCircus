@@ -11,9 +11,8 @@
 7. Polish la HomePage - en cours
 8. Créer l'administration de la partie Show - Ok
 9. Créer l'administration de la partie Event - Ok
-10. Responsive Partie Présentation
-11. Responsive Partie Event
-12. Responsive Partie Spectacle
-13. Show all Spectacle
-14. Faire le dossier Ressources
+10. Responsive Partie Présentation -Meh
+11. Responsive Partie Event -Ok
+12. Responsive Partie Spectacle -Ok
+14. Faire le dossier Ressources - Ok
 
