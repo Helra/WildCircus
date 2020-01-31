@@ -1,3 +1,17 @@
 .navbar-light {
     background-color: $first-color;
 }
+
+.page-footer  {
+    background-color: $first-color;
+}
+
+.footer-link {
+    text-decoration: none ;
+    color: $third-color;
+}
+
+.footer-link:hover {
+    text-decoration: $light-color ;
+    color: $third-color;
+}

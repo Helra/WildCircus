@@ -11,3 +11,14 @@
 .btn-blue:hover {
     background-color: $secondary-color;
 }
+
+.btn-white {
+    color: $first-color;
+    background-color: $third-color;
+    font-size: 12pt;
+}
+
+.btn-white:hover {
+    background-color: $first-color;
+    color: $third-color;
+}
